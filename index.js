@@ -15,9 +15,18 @@ The function should:
   Example createMenuItem('tacos', 8, 'Lunch') should return {name: 'tacos', price: 8, category: 'Lunch'}
 */
 
-function createMenuItem(/*Your code here*/){
-    /*Your code here*/
+function createMenuItem(name, price, category){
+    
+    this.name = name;
+
+    this.price = price;
+
+    this.category = category;
+
+    return {name, price, category}
 }
+
+const tacos = new createMenuItem('tacos', 8, "Lunch")
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Invoke your function!
@@ -29,6 +38,11 @@ Test your createMenuItems function by doing the following:
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
 
+const pizza = new createMenuItem("pizza",5,"lunch")
+
+const bagels = new createMenuItem("bagels",3,"Breakfast")
+
+const salad = new createMenuItem("salad",7,"lunch")
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -45,10 +59,17 @@ Using the burger object below do the following:
 */
 const burger = {
   name: "Burger", 
-  price: 18, 
+  price: 18,
   category: "Lunch", 
+  discount: function(string){
+    if (string === "teacher" || string === "student" ) {
+      return (this.price - (this.price * 0.25))
+    } else { 
+      return (this.price - (this.price * 0.10))
+    }
+  }
+}     
   
-}
 
 
 
@@ -71,12 +92,12 @@ Using the reviews array above:
 
 
 
-
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Reyna's feedback is missing! Use what you know to do the following: (no function needed) 
   1. Add this feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"
   2. log the reviews array to the console to check your work
 */
+
 
 
 
